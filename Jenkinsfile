@@ -8,13 +8,13 @@ pipeline {
 			git branch:'main', url: 'https://github.com/night-ECHO/net.git'
 		}
 	} // end clone
-// stage ('Publish') {
-// 		steps {
-// 			echo 'public 2 runnig folder'
-// 		//iisreset /stop // stop iis de ghi de file 
-// 			bat 'xcopy "%WORKSPACE%" /E /Y /I /R "c:\\myproject"'
-//  		}
-// 	}
+stage ('Publish') {
+		steps {
+			echo 'public 2 runnig folder'
+		//iisreset /stop // stop iis de ghi de file 
+			bat 'xcopy "%WORKSPACE%" /E /Y /I /R "c:\\myproject"'
+ 		}
+	}
 // stage('Deploy to IIS') {
 //             steps {
 //                 powershell '''
