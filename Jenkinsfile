@@ -15,18 +15,18 @@ stage ('Publish') {
 			bat 'xcopy "%WORKSPACE%" /E /Y /I /R "c:\\myproject"'
  		}
 	}
-// stage('Deploy to IIS') {
-//             steps {
-//                 powershell '''
+stage('Deploy to IIS') {
+            steps {
+                powershell '''
                
-//                 # Tạo website nếu chưa có
-//                 Import-Module WebAdministration
-//                 if (-not (Test-Path IIS:\\Sites\\MySite)) {
-//                     New-Website -Name "MySite" -Port 83 -PhysicalPath "c:\\myproject"
-//                 }
-//                 '''
-//             }
-//         } // end deploy iis
+                # Tạo website nếu chưa có
+                Import-Module WebAdministration
+                if (-not (Test-Path IIS:\\Sites\\MySite)) {
+                    New-Website -Name "MySite" -Port 83 -PhysicalPath "c:\\myproject"
+                }
+                '''
+            }
+        } // end deploy iis
 
   } // end stages
 }//end pipeline
